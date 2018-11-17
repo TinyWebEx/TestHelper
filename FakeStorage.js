@@ -1,5 +1,5 @@
-import isPlainObject from "../../../lodash/isPlainObject.js";
-import isString from "../../../lodash/isString.js";
+import isPlainObject from "../lodash/isPlainObject.js";
+import isString from "../lodash/isString.js";
 
 // NOTE: When using, remember this uses "this". So better .bind(thisObject) here.
 
@@ -124,7 +124,7 @@ export class FakeStorage {
 
             if (isPlainObject(keys)) {
                 const returnValue = keys;
-                for (const key of Object.keys(test)) {
+                for (const key of Object.keys(keys)) {
                     fillObjects(returnValue, key);
                 }
                 resolve(returnValue);
