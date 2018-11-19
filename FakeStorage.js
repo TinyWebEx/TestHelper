@@ -11,7 +11,7 @@ export class FakeStorage {
     /**
      * Saves a value in the storage.
      *
-     * AttentioN: It does not use deep-cloning, so avoid passing it many (nested)
+     * Attention: It does not use deep-cloning, so avoid passing it many (nested)
      * object references.
      *
      * @function
