@@ -1,3 +1,10 @@
+/**
+ * Modify/load/get HTML to/from the test area of the browser.
+ *
+ * @public
+ * @module HtmlMock
+ */
+
 const TEST_AREA_ID = "testArea";
 
 const elTestArea = document.getElementById(TEST_AREA_ID);
