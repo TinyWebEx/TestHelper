@@ -14,11 +14,11 @@ const elTestArea = document.getElementById(TEST_AREA_ID);
  *
  * Based on {@link https://stackoverflow.com/a/10805198}.
  *
- * @private
+ * @public
  * @param  {string} text
  * @returns {string}
  */
-function stripAllNewlines(text) {
+export function stripAllNewlines(text) {
     return text.replace(/(\r\n\t|\r\n|\n|\r\t)/gm, "");
 }
 
