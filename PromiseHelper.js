@@ -1,7 +1,7 @@
 /**
  * Wait for a defined amount of time (and optionally) do something afterwards.
  *
- * @function
+ * @public
  * @param {int} timeInMs the time to wait
  * @param {function} doAfterwards a function to execute afterwards
  * @returns {void}

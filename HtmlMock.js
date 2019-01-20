@@ -7,36 +7,22 @@ const elTestArea = document.getElementById(TEST_AREA_ID);
  *
  * Based on {@link https://stackoverflow.com/a/10805198}.
  *
- * @function
  * @private
  * @param  {string} text
  * @returns {string}
  */
-export function stripAllNewlines(text) {
+function stripAllNewlines(text) {
     return text.replace(/(\r\n\t|\r\n|\n|\r\t)/gm, "");
-}
-
-/**
- * Downloads the test file and attach it to the test area.
- *
- * @function
- * @private
- * @param  {string} filename
- * @returns {Promise}
- */
-export function setTestHtmlFile(filename) {
-    return getTestHtmlFile(filename).then((responseBlob) => setTestHtml(responseBlob));
 }
 
 /**
  * Get test HTML code froma file name.
  *
- * @function
  * @private
  * @param  {string} filename
  * @returns {Promise}
  */
-export function getTestHtmlFile(filename) {
+function getTestHtmlFile(filename) {
     return fetch(`./${filename}`).then(async (response) => {
         if (!response.ok) {
             throw new Error(`Error in network response when fetching ${filename}.`);
@@ -47,10 +33,20 @@ export function getTestHtmlFile(filename) {
 }
 
 /**
+ * Downloads the test file and attach it to the test area.
+ *
+ * @public
+ * @param  {string} filename
+ * @returns {Promise}
+ */
+export function setTestHtmlFile(filename) {
+    return getTestHtmlFile(filename).then((responseBlob) => setTestHtml(responseBlob));
+}
+
+/**
  * Set the HTML code as a test code in the test area.
  *
- * @function
- * @private
+ * @public
  * @param  {string} htmlText
  * @returns {void}
  */
@@ -61,8 +57,7 @@ export function setTestHtml(htmlText) {
 /**
  * Get's the current test HTML code.
  *
- * @function
- * @private
+ * @public
  * @returns {string}
  */
 export function getTestHtml() {
@@ -72,8 +67,7 @@ export function getTestHtml() {
 /**
  * Removes any test HTML code.
  *
- * @function
- * @private
+ * @public
  * @returns {void}
  */
 export function cleanup() {
